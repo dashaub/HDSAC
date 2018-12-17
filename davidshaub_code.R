@@ -24,6 +24,8 @@ betaPrior <- dbeta(x, a, b)
 # plotting parameters
 lwd <- 4
 size <- 480 * 5
+cols <- c("red", "black", "blue")
+cols <- c("#b3e2cd", "#fdcdac", "#cbd5e8")
 
 # 
 p <- 0.4
@@ -48,12 +50,12 @@ for(i in 1:50){
   mainText <- paste0(mainText, "\n", subText)
   fileName <- paste0(1000 + i, ".png")
   png(filename = fileName, width = size, height = size, res = 300)
-  plot(x, betaPrior, lwd = lwd, type = "l", col = "red",
-       ylab = "Density", ylim = c(0, 25))
+  plot(x, betaPrior, lwd = lwd, type = "l", col = cols[1],
+       ylab = "Density", ylim = c(0, 30))
   title(main = mainText)
-  lines(x, hx, col = "blue", lwd = lwd)
+  lines(x, hx, col = cols[3], lwd = lwd)
   legend("topright", legend = c("Prior", "Empirical", "Posterior"),
-         lwd = lwd, col = c("red", "black", "blue"))
-  abline(v = k / N, lwd = lwd, col = "black")
+         lwd = lwd, col = cols)
+  abline(v = k / N, lwd = lwd, col = cols[2])
   dev.off()
 }
