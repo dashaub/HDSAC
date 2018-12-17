@@ -51,7 +51,7 @@ for(i in 1:50){
   fileName <- paste0(1000 + i, ".png")
   png(filename = fileName, width = size, height = size, res = 300)
   plot(x, betaPrior, lwd = lwd, type = "l", col = cols[1],
-       ylab = "Density", ylim = c(0, 30))
+       xlab = "θ", ylab = "P(θ)", ylim = c(0, 30))
   title(main = mainText)
   lines(x, hx, col = cols[3], lwd = lwd)
   legend("topright", legend = c("Prior", "Empirical", "Posterior"),
