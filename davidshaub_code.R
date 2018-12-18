@@ -27,7 +27,7 @@ size <- 480 * 5
 cols <- c("red", "black", "blue")
 cols <- c("#b3e2cd", "#fdcdac", "#cbd5e8")
 
-# 
+# Initialize population data
 p <- 0.4
 num <- 50
 set.seed(50)
@@ -46,7 +46,7 @@ for(i in 1:50){
 
   # Plot the current trial
   subText <- paste0("Beta distribution with α = ", a, ", β = ", b)
-  mainText <- paste0("Trial ", i)
+  mainText <- paste0("Observation ", i)
   mainText <- paste0(mainText, "\n", subText)
   fileName <- paste0(1000 + i, ".png")
   png(filename = fileName, width = size, height = size, res = 300)
