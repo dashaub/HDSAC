@@ -1,1 +1,1 @@
-# HDSAC
+# Harvard Data Science Animation Contest
